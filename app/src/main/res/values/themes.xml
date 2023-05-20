@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TIUndira" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/undira_blue</item>
+        <item name="colorPrimaryDark">@color/undira_blue</item>
+        <item name="colorAccent">@color/undira_green</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.TIUndira.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.TIUndira.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.TIUndira.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

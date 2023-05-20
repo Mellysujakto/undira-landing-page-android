@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TI Undira</string>
+    <string name="tab_text_1">Beranda</string>
+    <string name="tab_text_2">Visi Misi</string>
+    <string name="tab_text_3">Tujuan</string>
+    <string name="tab_text_4">Profil Lulusan</string>
+    <string name="tab_text_5">Mengapa Harus Pilh TI UNDIRA</string>
+    <string name="tab_text_6">Kurikulum</string>
+    <string name="tab_text_7">Hubungi Kami</string>
+</resources>
