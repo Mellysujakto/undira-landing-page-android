@@ -1,5 +1,6 @@
 package com.undira.tiundira.ui.main;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +11,21 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
-import com.undira.tiundira.R;
+
+import com.undira.tiundira.DBHandler;
+import com.undira.tiundira.Undira;
 import com.undira.tiundira.databinding.FragmentMainBinding;
 
 /**
  * A placeholder fragment containing a simple view.
  */
+@SuppressLint("ValidFragment")
 public class PlaceholderFragment extends Fragment {
+    private DBHandler dbHandler;
+    @SuppressLint("ValidFragment")
+    public PlaceholderFragment() {
+        this.dbHandler = dbHandler;
+    }
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -35,12 +44,17 @@ private FragmentMainBinding binding;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pageViewModel = new ViewModelProvider(this,
-               new ViewModelProvider.NewInstanceFactory()).get(PageViewModel.class);
+                new ViewModelProvider.NewInstanceFactory()).get(PageViewModel.class);
         int index = 1;
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
         pageViewModel.setIndex(index);
+
+        dbHandler = new DBHandler(getActivity());
+        Undira course = dbHandler.getCourseById(index);
+        String a = (course != null) ? course.getContent() : "Course content not available";
+        pageViewModel.setText(a);
     }
 
     @Override
